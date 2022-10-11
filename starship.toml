@@ -1,16 +1,95 @@
 # General
 scan_timeout = 100
-continuation_prompt = "[     ❯   ](bold green)"
+continuation_prompt = "[     ❯   ](bold dimmed green)"
+format = """
+$username\
+$hostname\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+${custom.hooks}\
+${custom.make}\
+$hg_branch\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$haskell\
+$helm\
+$java\
+$julia\
+$kotlin\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$env_var\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$container\
+$shell\
+$character"""
 
 [sudo]
 disabled = false
 
 [directory]
-truncation_length = 4
+truncation_length = 4  
 read_only = "!"
 read_only_style = "bold red"
 repo_root_style = "bold underline #0088ff"
 
+[jobs]
+format = "[$symbol$number ]($style) "
 
 [shell]
 bash_indicator = "bash"
@@ -30,3 +109,24 @@ style = "bold green"
 
 [rust]
 format = "via [$symbol($numver)]($style) of [$toolchain]($style) "
+
+
+# Custom
+[custom.make]
+description = "Show if a Makefile is present in the current directory"
+detect_files = ["Makefile"]
+symbol = "⚙️ "
+style = "bold black"
+format = "[with $symbol]($style) "
+
+[custom.hooks]
+command = "/home/arthur/GitHub/Config/hooks"
+when = """
+cd $(git rev-parse --show-toplevel 2> /dev/null)
+
+test -d .githooks/
+"""
+shell = "bash"
+description = "Show if a .githooks directory is present in the current directory"
+style = "bold bright-green"
+format = '[{$output}]($style) '
