@@ -1,0 +1,32 @@
+# General
+scan_timeout = 100
+continuation_prompt = "[     ❯   ](bold green)"
+
+[sudo]
+disabled = false
+
+[directory]
+truncation_length = 4
+read_only = "!"
+read_only_style = "bold red"
+repo_root_style = "bold underline #0088ff"
+
+
+[shell]
+bash_indicator = "bash"
+unknown_indicator = "???"
+style = "bold green"
+disabled = false
+
+
+# Misc
+[aws]
+disabled = true
+
+
+# Language
+[python]
+style = "bold green"
+
+[rust]
+format = "via [$symbol($numver)]($style) of [$toolchain]($style) "
