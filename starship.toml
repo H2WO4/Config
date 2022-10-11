@@ -123,8 +123,11 @@ format = "[with $symbol]($style) "
 command = "/home/arthur/GitHub/Config/hooks"
 when = """
 cd $(git rev-parse --show-toplevel 2> /dev/null)
+cd ${$(git config core.hooksPath):-".git/hooks"}
 
-test -d .githooks/
+if [[ $(ls | grep ^.* | wc -l) -gt 0 ]]; then
+	echo "true"
+fi
 """
 shell = "bash"
 description = "Show if a .githooks directory is present in the current directory"

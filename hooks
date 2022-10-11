@@ -1,16 +1,17 @@
 #!/bin/bash
 output=""
 cd $(git rev-parse --show-toplevel)
+hookPath=${$(git config core.hooksPath):-".git/hooks"}
 
-if (( $(ls .githooks/ | grep ^pre-commit$ | wc -l) > 0)); then
+if (( $(ls .githooks/ | grep ^pre-commit$ | wc -l) >= 0)); then
 	output="$output+"
 fi
 
-if (( $(ls .githooks/ | grep ^prepare-commit-msg$ | wc -l) > 0)); then
+if (( $(ls .githooks/ | grep ^prepare-commit-msg$ | wc -l) >= 0)); then
 	output="$output@"
 fi
 
-if (( $(ls .githooks/ | grep ^post-commit$ | wc -l) > 0)); then
+if (( $(ls .githooks/ | grep ^post-commit$ | wc -l) >= 0)); then
 	output="$output↑"
 fi
 
