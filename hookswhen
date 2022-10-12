@@ -1,0 +1,9 @@
+#!/bin/bash
+cd $(git rev-parse --show-toplevel 2> /dev/null) || exit 1
+cd $(git config core.hooksPath || echo ".git/hooks") || exit 1
+
+if [[ $(ls | grep -P "^[^.]*(?:\.(?!sample).*)?$" | wc -l) -gt 0 ]]; then
+	exit 0
+else
+	exit 1
+fi

@@ -1,17 +1,37 @@
 #!/bin/bash
 output=""
 cd $(git rev-parse --show-toplevel)
-hookPath=${$(git config core.hooksPath):-".git/hooks"}
+cd $(git config core.hooksPath || echo ".git/hooks")
 
-if (( $(ls .githooks/ | grep ^pre-commit$ | wc -l) >= 0)); then
+if (( $(ls | grep ^pre-commit$ | wc -l) > 0)); then
 	output="$output+"
 fi
 
-if (( $(ls .githooks/ | grep ^prepare-commit-msg$ | wc -l) >= 0)); then
-	output="$output@"
+if (( $(ls | grep ^prepare-commit-msg$ | wc -l) > 0)); then
+	output="$output'"
 fi
 
-if (( $(ls .githooks/ | grep ^post-commit$ | wc -l) >= 0)); then
+if (( $(ls | grep ^commit-msg$ | wc -l) > 0)); then
+	output="$output\""
+fi
+
+if (( $(ls | grep ^post-commit$ | wc -l) > 0)); then
+	output="$output*"
+fi
+
+if (( $(ls | grep ^pre-rebase$ | wc -l) > 0)); then
+	output="$output!"
+fi
+
+if (( $(ls | grep ^post-rewrite$ | wc -l) > 0)); then
+	output="$output""r"
+fi
+
+if (( $(ls | grep ^post-merge$ | wc -l) > 0)); then
+	output="$output↓"
+fi
+
+if (( $(ls | grep ^pre-push$ | wc -l) > 0)); then
 	output="$output↑"
 fi
 
