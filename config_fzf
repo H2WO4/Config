@@ -31,6 +31,21 @@ _fzf_complete_apt() {
     case "$subcommand" in
 	install)	_fzf_complete --exact -m -- "$@" < <( apt list 2> /dev/null | awk -F/ '{print $1}' | tail -n +2 ) ;;
 	remove)		_fzf_complete --exact -m -- "$@" < <( apt list --installed 2> /dev/null | awk -F/ '{print $1}' | tail -n +2 ) ;;
+	apt)	_fzf_complete -- "$@" < <(
+		echo update
+		echo upgrade
+		echo install
+		echo remove
+		echo autoremove
+		echo list
+		echo full-upgrade
+		echo dist-upgrade
+		echo show
+		echo search
+		echo reinstall
+		echo edit-sources
+		echo satisfy
+	    ) ;;
 	*)		;;
     esac
 }

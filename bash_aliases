@@ -7,6 +7,7 @@ alias cl='clear'
 alias cdd='cd ..'
 alias cddd='cd ../..'
 alias cdddd='cd ../../..'
+alias sudo='sudo ' # Make it so that sudo still trigger aliases
 
 # exa
 alias l='exa --icons --git-ignore' 
