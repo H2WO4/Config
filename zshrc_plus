@@ -1,0 +1,35 @@
+# Antigen
+source ~/antigen.zsh
+
+antigen use oh-my-zsh
+
+antigen bundle git
+antigen bundle compleat
+antigen bundle vi-mode
+antigen bundle tmux
+antigen bundle docker
+antigen bundle symfony
+antigen bundle pip
+antigen bundle python
+antigen bundle virtualenv
+antigen bundle debian
+
+antigen bundle  MenkeTechnologies/zsh-cargo-completion
+
+antigen bundle mfaerevaag/wd
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
+
+# man & help
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+help() {
+    "$@" --help 2>&1 | bat -pl help
+}
+
+# Starship
+eval "$(starship init zsh)"
+
+# Zstlys
+zstyle ':completion:*:*:make:*' tag-order 'targets'

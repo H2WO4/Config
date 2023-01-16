@@ -1,0 +1,59 @@
+# General
+alias cp='cp -aiv'
+alias mv='mv -iv'
+alias rm='rm -rIv'
+alias mkdir='mkdir -pv'
+alias cl='clear'
+alias sudo='sudo ' # Make it so that sudo still trigger aliases
+
+# Config changes
+alias reload='source ~/.zshrc'
+alias edit='vim ~/.zshrc'
+
+# exa
+alias l='exa --icons --git-ignore'
+
+alias ls='exa -1 --icons --git-ignore'
+alias lg='exa -1 --icons'
+alias lt='ls -TL 2'
+alias ltt='ls -TL 5'
+alias lttt='ls -T'
+alias ll='ls -lgbh --time-style=long-iso --git'
+alias la='ls -a'
+
+alias llt='ll -TL 2'
+alias lltt='ll -TL 5'
+alias llttt='ll -T'
+alias lat='lt -a'
+alias latt='ltt -a --g'
+alias lattt='lttt -a'
+alias lla='ll -a'
+alias llat='llt -a'
+alias llatt='lltt -a'
+alias llattt='llttt -a'
+
+alias llg='lg -lgbh --time-style=long-iso --git'
+alias lag='lg -a'
+alias lgt='lg -TL 2'
+
+alias llgt='llg -TL 2'
+alias llgtt='llg -TL 5'
+alias llgttt='llg -T'
+alias lagt='lgt -a'
+alias lagtt='lgtt -a --g'
+alias lagttt='lgttt -a'
+alias llag='llg -a'
+alias llagt='llgt -a'
+alias llagtt='llgtt -a'
+alias llagttt='llgttt -a'
+
+# cd
+c() {
+    builtin cd $1; l
+}
+alias cdd='cd ..'
+alias cddd='cd ../..'
+alias cdddd='cd ../../..'
+
+# grep
+# TODO

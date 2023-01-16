@@ -4,10 +4,13 @@ alias mv='mv -iv'
 alias rm='rm -rIv'
 alias mkdir='mkdir -pv'
 alias cl='clear'
+alias sudo='sudo ' # Make it so that sudo still trigger aliases
+alias reload='source ~/.zshrc'
+alias edit='vim ~/.zshrc'
+
 alias cdd='cd ..'
 alias cddd='cd ../..'
 alias cdddd='cd ../../..'
-alias sudo='sudo ' # Make it so that sudo still trigger aliases
 
 # exa
 alias l='exa --icons --git-ignore' 
@@ -27,6 +30,11 @@ alias lttt='exa -T --icons --git-ignore'
 alias lattt='exa -aT --icons'
 alias llttt='exa -lgbTh --icons --time-style=long-iso --git --git-ignore'
 alias llattt='exa -lgbTah --icons --time-style=long-iso --git'
+
+# cd
+c() {
+    builtin cd $1; l
+}
 
 # grep
 # TODO

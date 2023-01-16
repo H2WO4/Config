@@ -1,5 +1,5 @@
 # General
-scan_timeout = 100
+scan_timeout = 500
 continuation_prompt = "[     ❯   ](bold dimmed green)"
 format = """
 $username\
@@ -17,6 +17,7 @@ $git_metrics\
 $git_status\
 ${custom.hooks}\
 ${custom.make}\
+${custom.docker_compose}\
 $hg_branch\
 $docker_context\
 $package\
@@ -75,6 +76,7 @@ $jobs\
 $battery\
 $time\
 $status\
+$os\
 $container\
 $shell\
 $character"""
@@ -83,7 +85,7 @@ $character"""
 disabled = false
 
 [directory]
-truncation_length = 4  
+truncation_length = 4
 read_only = "!"
 read_only_style = "bold red"
 repo_root_style = "bold underline #0088ff"
@@ -97,7 +99,6 @@ unknown_indicator = "???"
 style = "bold green"
 disabled = false
 
-
 # Misc
 [aws]
 disabled = true
@@ -108,7 +109,7 @@ disabled = true
 style = "bold green"
 
 [rust]
-format = "via [$symbol($numver)]($style) of [$toolchain]($style) "
+format = "via [$symbol($numver)]($style) in [$toolchain]($style) "
 
 
 # Custom
@@ -117,6 +118,18 @@ description = "Show if a Makefile is present in the current directory"
 detect_files = ["Makefile"]
 symbol = "⚙️ "
 style = "bold black"
+format = "[with $symbol]($style) "
+
+[custom.docker_compose]
+description = "Show if a `docker-compose.yml` is present in the current directory"
+detect_files = [
+	"docker-compose.yml",
+	"docker-compose.yaml",
+	"docker-compose.override.yml",
+	"docker-compose.override.yaml",
+]
+symbol = "🚢"
+style = "bold blue"
 format = "[with $symbol]($style) "
 
 [custom.hooks]
