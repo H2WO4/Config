@@ -9,6 +9,8 @@ alias sudo='sudo ' # Make it so that sudo still trigger aliases
 # Config changes
 alias reload='source ~/.zshrc'
 alias edit='vim ~/.zshrc'
+alias edit-plus='vim ~/.zshrc_plus'
+alias edit-aliases='vim ~/.zsh_aliases'
 
 # exa
 alias l='exa --icons --git-ignore'
