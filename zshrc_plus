@@ -1,29 +1,44 @@
 # Antigen
-source ~/antigen.zsh
+export ZSH_CUSTOM=~/.antigen/bundles/custom
+source ~/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
 antigen bundle git
+
 antigen bundle compleat
 antigen bundle vi-mode
+
 antigen bundle tmux
 antigen bundle docker
 antigen bundle symfony
 antigen bundle pip
 antigen bundle python
 antigen bundle virtualenv
-antigen bundle debian
+antigen bundle fd
+antigen bundle ripgrep
+antigen bundle rsync
 antigen bundle poetry
+antigen bundle rust
 
-antigen bundle MenkeTechnologies/zsh-cargo-completion
+antigen bundle belak/zsh-utils@main editor
+antigen bundle belak/zsh-utils@main history
+antigen bundle belak/zsh-utils@main utility
 
+antigen bundle command-not-found
 antigen bundle mfaerevaag/wd
 antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-history-substring-search
+
+antigen bundle MenkeTechnologies/zsh-cargo-completion
 
 antigen apply
+bindkey -v
 
 # man & help
+unalias help
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 help() {
     "$@" --help 2>&1 | bat -pl help
