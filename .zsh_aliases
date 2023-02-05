@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # General
 alias cp='cp -aiv'
 alias mv='mv -iv'
@@ -11,6 +13,7 @@ alias reload='source ~/.zshrc'
 alias edit='vim ~/.zshrc'
 alias edit-plus='vim ~/.zshrc_plus'
 alias edit-aliases='vim ~/.zsh_aliases'
+alias edit-vim='vim ~/.vimrc'
 
 # exa
 alias l='exa --icons --git-ignore'
@@ -42,7 +45,7 @@ alias llgt='llg -TL 2'
 alias llgtt='llg -TL 5'
 alias llgttt='llg -T'
 alias lagt='lgt -a'
-alias lagtt='lgtt -a --g'
+alias lagtt='lgtt -a -g'
 alias lagttt='lgttt -a'
 alias llag='llg -a'
 alias llagt='llgt -a'

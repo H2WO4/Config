@@ -133,8 +133,8 @@ style = "bold blue"
 format = "[with $symbol]($style) "
 
 [custom.hooks]
-command = "/home/arthur/GitHub/Config/hooks"
-when = "/home/arthur/GitHub/Config/hookswhen"
+command = "~/GitHub/Config/hooks"
+when = "~/GitHub/Config/hookswhen"
 shell = "bash"
 description = "Show if a .githooks directory is present in the current directory"
 style = "bold bright-green"

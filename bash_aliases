@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # General
 alias cp='cp -aiv'
 alias mv='mv -iv'

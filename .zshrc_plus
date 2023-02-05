@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Antigen
 export ZSH_CUSTOM=~/.antigen/bundles/custom
 source ~/antigen/antigen.zsh
@@ -20,6 +22,7 @@ antigen bundle ripgrep
 antigen bundle rsync
 antigen bundle poetry
 antigen bundle rust
+antigen bundle nvm
 
 antigen bundle belak/zsh-utils@main editor
 antigen bundle belak/zsh-utils@main history
