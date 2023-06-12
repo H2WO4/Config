@@ -23,6 +23,10 @@ antigen bundle rsync
 antigen bundle poetry
 antigen bundle rust
 antigen bundle nvm
+antigen bundle ubuntu
+antigen bundle aws
+antigen bundle gh
+antigen bundle tig
 
 antigen bundle belak/zsh-utils@main editor
 antigen bundle belak/zsh-utils@main history

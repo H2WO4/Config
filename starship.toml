@@ -1,6 +1,6 @@
 # General
 scan_timeout = 500
-continuation_prompt = "[     ❯   ](bold dimmed green)"
+continuation_prompt = "[    ❯   ](bold dimmed green)"
 format = """
 $username\
 $hostname\
@@ -123,6 +123,7 @@ format = "[with $symbol]($style) "
 [custom.docker_compose]
 description = "Show if a `docker-compose.yml` is present in the current directory"
 detect_files = [
+    "Dockerfile",
 	"docker-compose.yml",
 	"docker-compose.yaml",
 	"docker-compose.override.yml",

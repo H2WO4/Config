@@ -10,16 +10,16 @@ alias sudo='sudo ' # Make it so that sudo still trigger aliases
 
 # Config changes
 alias reload='source ~/.zshrc'
-alias edit='vim ~/.zshrc'
-alias edit-plus='vim ~/.zshrc_plus'
-alias edit-aliases='vim ~/.zsh_aliases'
-alias edit-vim='vim ~/.vimrc'
+alias edit='hx ~/.zshrc'
+alias edit-plus='hx ~/.zshrc_plus'
+alias edit-aliases='hx ~/.zsh_aliases'
+alias edit-vim='hx ~/.vimrc'
 
 # exa
-alias l='exa --icons --git-ignore'
+alias l='exa -1 --icons --git-ignore'
 
-alias ls='exa -1 --icons --git-ignore'
-alias lg='exa -1 --icons'
+alias ls='exa --icons --git-ignore'
+alias lg='exa --icons'
 alias lt='ls -TL 2'
 alias ltt='ls -TL 5'
 alias lttt='ls -T'
@@ -52,13 +52,11 @@ alias llagt='llgt -a'
 alias llagtt='llgtt -a'
 alias llagttt='llgttt -a'
 
-# cd
-c() {
-    builtin cd $1; l
-}
-alias cdd='cd ..'
-alias cddd='cd ../..'
-alias cdddd='cd ../../..'
+# git
+alias g='git'
 
-# grep
-# TODO
+# docker
+alias d='docker'
+
+# rg
+alias hrg='history | rg'
