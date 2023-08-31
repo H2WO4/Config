@@ -7,7 +7,7 @@ set nobackup
 " Appearance {{{
 
 set number
-colorscheme elflord
+colorscheme default
 
 " }}}
 

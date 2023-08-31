@@ -60,3 +60,8 @@ alias d='docker'
 
 # rg
 alias hrg='history | rg'
+
+# ZelliJ
+function zl() {
+  zellij --layout ide -s ${PWD##*/}
+}

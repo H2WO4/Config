@@ -1,0 +1,40 @@
+layout {
+	tab name="main" {
+		pane split_direction="vertical" {
+			pane stacked=true {
+				pane command="exa" {
+					args "-l" "--icons" "--color=always" "-TL2" "--git-ignore" "--no-permissions" "--no-filesize" "--no-user" "--no-time" "--git"
+					name "Files"
+				}
+
+				size "15%"
+			}
+
+			pane split_direction="horizontal" {
+				pane edit="." {
+					focus true
+					name "Editor"
+					size "65%"
+				}
+
+				pane stacked=true {
+					pane {
+						name "Terminal"
+					}
+
+					pane command="gitui" {
+						name "Git"
+					}
+
+					pane command="mprocs" {
+						name "Commands"
+					}
+				}
+			}
+		}
+		
+		pane size=1 borderless=true {
+			plugin location="zellij:compact-bar"
+		}
+	}
+}
